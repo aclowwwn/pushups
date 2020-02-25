@@ -7,41 +7,40 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
 import "./layout.css"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
+class Layout extends React.Component {
+  
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      darkMode: true
+    }
+  }
+
+  render() {
+    const { darkMode } = this.state
+
+    return (
+        <div
+          style={{
+            backgroundColor: darkMode? 'black': 'white',
+            color: darkMode? 'white': 'black',
+            padding: `0 1.0875rem 1.45rem`,
+            padding: '75px 50px'
+          }}
+        >
+          <span onClick={() => this.setState({ darkMode: !darkMode })} style={{position: 'absolute', position: 'absolute', top: 10, right: 20, fontSize: 28, userSelect: 'none', cursor: 'pointer'}}>{darkMode? '🌔': '🌘'}</span>
+          <main>{this.props.children}</main>
+          <footer>
+            <a target="_blank" style={{textDecoration: 'none', color: darkMode? 'white': 'black', position: 'fixed', bottom: 10, right: 20}} href="https://www.github.com/aclowwwn">@clowwwn™</a>
+          </footer>
+        </div>
+    )
+  }
 }
 
 Layout.propTypes = {
