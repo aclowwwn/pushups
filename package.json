@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "pushups",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "version": "0.2.0",
+  "author": "aclowwwn <aclowwwn@gmail.com>",
   "dependencies": {
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
