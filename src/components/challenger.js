@@ -1,23 +1,13 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-
-
 export class Challenger extends React.Component {
-    constructor (props) {
-        super(props)
-
-        this.state = { tally: 0 }
-    }
-
-    renderTally (index) {
-        const { tally } = this.state
+    renderTally () {
+        const { tally } = this.props
         let diver = Math.floor(tally/5), moder = tally%5, tallyString = []
 
         for (let i = 1; i <= diver; i++) {
             tallyString.push(FULL_TALLY)
         }
-
 
         for (let j = 0; j < moder; j++) {
             tallyString.push(TALLY)
@@ -26,13 +16,15 @@ export class Challenger extends React.Component {
         return tallyString
     }
 
-    onClick() {
-        this.setState({ tally: ++this.state.tally })
+    onClick(name) {
+        this.props.onClick(name)
     }
 
     render() {
+        const { name } = this.props 
+
         return <div style={styles.challenger}>
-            <div style={styles.name} onClick={this.onClick.bind(this)}>{this.props.challenger}</div>
+            <div style={styles.name} onClick={this.onClick.bind(this, name)}>{name}</div>
             <div style={styles.tallies}> {this.renderTally()} </div>
         </div>
     }
