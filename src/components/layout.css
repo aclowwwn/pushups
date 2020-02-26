@@ -620,3 +620,23 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+.logo {
+  animation: MoveUpDown 1s linear infinite;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 130px;
+  height: 60px;
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    bottom: 0;
+    transform: rotate(0deg);
+  }
+  50% {
+    bottom: 5px;
+    transform: rotate(-3deg);
+  }
+}

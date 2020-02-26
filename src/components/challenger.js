@@ -40,7 +40,8 @@ const styles = {
         userSelect: 'none',
         fontSize: 50,
         cursor: 'pointer',
-        marginRight: 60
+        marginRight: 60,
+        width: 400
     },
     tallies: {
         display: 'flex',
@@ -49,11 +50,13 @@ const styles = {
     },
     tally: {
         fontFamily: 'fantasy',
+        userSelect: 'none',
         fontSize: 60
     },
     fullTally: {
         textDecoration: 'line-through',
         fontFamily: 'fantasy',
+        userSelect: 'none',
         fontSize: 60,
         marginRight: 10
 

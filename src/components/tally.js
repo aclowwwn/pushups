@@ -5,31 +5,31 @@ import Challenger from "./Challenger"
 const office = [
     {
         name: 'Andi',
-        tally: 0
+        tally: 28
     },
     {
-        name: 'David',
-        tally: 0
+        name: 'Azar',
+        tally: 1
     },
     {
         name: 'Gabriel',
-        tally: 0
+        tally: 10
     },
     {
         name: 'Taz',
-        tally: 0
+        tally: 19
     },
     {
         name: 'Waseem',
-        tally: 0
+        tally: 4
     },
     {
-        name: 'Mohamad',
-        tally: 0
+        name: 'Muhammed',
+        tally: 17
     },
     {
         name: 'Sagar',
-        tally: 0
+        tally: 8
     },
 ]
 
@@ -62,12 +62,14 @@ class Tally extends React.Component {
             ...office.slice(index + 1)
         ]
 
-        this.setState({ office: newOffice.sort(best) })
+        this.setState({ office: newOffice })
     }
 
     render() {
+        const office = this.state.office.sort(best)
+
         return <div style={styles.challenger}>
-            {this.state.office.map(this.renderChallenger.bind(this))}
+            {office.map(this.renderChallenger.bind(this))}
         </div>
     }
 }
