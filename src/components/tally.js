@@ -20,6 +20,10 @@ const office = [
         tally: 0
     },
     {
+        name: 'Waseem',
+        tally: 0
+    },
+    {
         name: 'Mohamad',
         tally: 0
     },
@@ -50,7 +54,7 @@ class Tally extends React.Component {
 
     onClick(name) {
         const { office } = this.state
-        const index = office.findIndex(chlg => chlg.name == name)
+        const index = office.findIndex(chlg => chlg.name === name)
         const challenger = office[index]
         const newOffice = [
             ...office.slice(0, index),

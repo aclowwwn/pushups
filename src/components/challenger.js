@@ -24,7 +24,7 @@ export class Challenger extends React.Component {
         const { name } = this.props 
 
         return <div style={styles.challenger}>
-            <div style={styles.name} onClick={this.onClick.bind(this, name)}>{name}</div>
+            <div style={styles.name} onDoubleClick={this.onClick.bind(this, name)}>{name}</div>
             <div style={styles.tallies}> {this.renderTally()} </div>
         </div>
     }
